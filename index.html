@@ -10,7 +10,7 @@
  <section>
    <h1>Speech<br> Recognition</h1>
    <p>Available In Chrome😎 Only</p>
-   <button onclick="get()">Click here</button>
+   <button onclick="get()" id="get">Click here</button>
    <div class="container">
      <div class="texts">
      </div>
@@ -23,12 +23,11 @@
 const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
+const nut =document.getElementById("get");
 utterance.rate = 1;
 utterance.volume = 1;
-utterance.pitch = 0.5;
+utterance.pitch = 0.1;
 utterance.lang = "hi-US";						
-
-
 function get(){			
 window.speechSynthesis.speak(utterance);
 }
@@ -54,15 +53,18 @@ recognition.addEventListener("result", (e) => {
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
       utterance.text = "Hello everyone.";
+      nut.click();
     }
     if (
       text.indexOf('is your name') > -1 ||
       text.indexOf('w are you') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
+      nut.click();
     }
     if (text.indexOf('bye') > -1) {
-      utterance.text = "bye everyone. please come back later to meet me. bye.";
+      utterance.text = "bye everyone. please come back later. to meet me. bye.";
+      nut.click();
     }
     p = document.createElement("p");
   }
