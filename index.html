@@ -3,84 +3,73 @@
 <head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+				<link rel="stylesheet" href="style.css">
 				<title>Page title</title>
 </head>
-<body style="user-select:none;" onload="setInterval('shor()', 100)">
-				
-				
-<button onclick="clos()">Ashutosh Pandey</button>
-<input type="text" id="int-main">
-
-
-<input type="text" id="int-two">
-
-
-
-
+<body>
+ <section>
+   <h1>Speech<br> Recognition</h1>
+   <p>Available In Chrome😎 Only</p>
+   <div class="container">
+     <div class="texts">
+     </div>
+   </div>
+ </section>
 
 
 
+<script>								
+const texts = document.querySelector(".texts");
 
-<!--  
-<script>
-function get() {
-const utterance = new SpeechSynthesisUtterance();
-
-// Utterance properties
-var x ="नमस्ते. मेरा नाम jarvis है. मुझे मेरे डेवलपर्स ने बनाया हैं,. कैसे हैं आप लोग ?";
-var y ="Hello everyone. My name is jarvis. And I was made by my developers. How are you all ?";
-
-utterance.text = x;
-utterance.pitch = 0.5;
-utterance.rate = 1;
-utterance.volume = 1;
-utterance.lang = "hi-US";
-
- 
-window.speechSynthesis.speak(utterance);
-}						
-</script> -->
-
-
-
-
-
-
-
-
-
-<script>
-function clos(){
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition();
-recognition.continuous = true; recognition.interimResults = false; recognition.lang = "en-US"; 
-recognition.start(); 
+recognition.interimResults = true;
 
+let p = document.createElement("p");
 
-recognition.onresult = function(e) { 
-document.getElementById('int-main').value = e.results[0][0].transcript;
- recognition.stop();
-}; 
-recognition.onerror = function(e){ 
-recognition.stop(); 
-};
-}
- 	
+recognition.addEventListener("result", (e) => {
+  texts.appendChild(p);
+  const text = Array.from(e.results)
+    .map((result) => result[0])
+    .map((result) => result.transcript)
+    .join("");
 
+  p.innerText = text;
+  if (e.results[0].isFinal) {
+    if (text.includes("how are you")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "I am fine";
+      texts.appendChild(p);
+    }
+    if (
+      text.includes("what's your name") ||
+      text.includes("what is your name")
+    ) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "My Name is Cifar";
+      texts.appendChild(p);
+    }
+    if (text.includes("open my YouTube")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "opening youtube channel";
+      texts.appendChild(p);
+      console.log("opening youtube");
+      window.open("https://www.youtube.com/channel/UCdxaLo9ALJgXgOUDURRPGiQ");
+    }
+    p = document.createElement("p");
+  }
+});
 
+recognition.addEventListener("end", () => {
+  recognition.start();
+});
 
-
-
-function shor(){
-const i =document.getElementById("int-main").value;
-if(i ==="Ashu"){
-document.body.style.background ="red";
-}
-}		
-
-
-					
+recognition.start();
 </script>
 </body>
 </html>
