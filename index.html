@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+				<title>Page title</title>
+</head>
+<body style="user-select:none;" onload="setInterval('shor()', 100)">
+				
+				
+<button onclick="clos()">Ashutosh Pandey</button>
+<input type="text" id="int-main">
+
+
+<input type="text" id="int-two">
+
+
+
+
+
+
+
+
+<!--  
+<script>
+function get() {
+const utterance = new SpeechSynthesisUtterance();
+
+// Utterance properties
+var x ="नमस्ते. मेरा नाम jarvis है. मुझे मेरे डेवलपर्स ने बनाया हैं,. कैसे हैं आप लोग ?";
+var y ="Hello everyone. My name is jarvis. And I was made by my developers. How are you all ?";
+
+utterance.text = x;
+utterance.pitch = 0.5;
+utterance.rate = 1;
+utterance.volume = 1;
+utterance.lang = "hi-US";
+
+ 
+window.speechSynthesis.speak(utterance);
+}						
+</script> -->
+
+
+
+
+
+
+
+
+
+<script>
+function clos(){
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; =
+
+const recognition = new SpeechRecognition();
+recognition.continuous = true; recognition.interimResults = false; recognition.lang = "en-US"; 
+recognition.start(); 
+
+
+recognition.onresult = function(e) { 
+document.getElementById('int-main').value = e.results[0][0].transcript;
+ recognition.stop();
+}; 
+recognition.onend = function(e){ 
+recognition.start(); 
+};
+recognition.onerror = function(e){ 
+recognition.stop(); 
+};
+}
+ 	
+
+
+
+
+
+function shor(){
+const i =document.getElementById("int-main").value;
+if(i ==="Ashu"){
+document.body.style.background ="red";
+}
+}		
+
+
+					
+</script>
+</body>
+</html>
