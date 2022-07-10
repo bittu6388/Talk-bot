@@ -10,6 +10,7 @@
  <section>
    <h1>Speech<br> Recognition</h1>
    <p>Available In Chrome😎 Only</p>
+   <button onclick="get()">Click here</button>
    <div class="container">
      <div class="texts">
      </div>
@@ -22,6 +23,17 @@
 const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
+utterance.rate = 1;
+utterance.volume = 1;
+utterance.pitch = 0.5;
+utterance.lang = "hi-US";						
+
+
+function get(){			
+window.speechSynthesis.speak(utterance);
+}
+
+
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -40,29 +52,17 @@ recognition.addEventListener("result", (e) => {
 
   p.innerText = text;
   if (e.results[0].isFinal) {
-    if (text.includes("how are you")) {
-      utterance.text = "I am fine what about you?";
-				utterance.pitch = 0.5;
-      utterance.rate = 1;
-				utterance.volume = 1;
-				utterance.lang = "hi-US";							window.speechSynthesis.speak(utterance);			
+    if (text.indexOf('ello') > -1) {
+      utterance.text = "Hello everyone.";
     }
     if (
-      text.includes("what's your name") ||
-      text.includes("what is your name")
+      text.indexOf('is your name') > -1 ||
+      text.indexOf('w are you') > -1
     ) {
-      p = document.createElement("p");
-      p.classList.add("replay");
-      p.innerText = "My Name is Cifar";
-      texts.appendChild(p);
+      utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
     }
-    if (text.includes("open my YouTube")) {
-      p = document.createElement("p");
-      p.classList.add("replay");
-      p.innerText = "opening youtube channel";
-      texts.appendChild(p);
-      console.log("opening youtube");
-      window.open("https://www.youtube.com/channel/UCdxaLo9ALJgXgOUDURRPGiQ");
+    if (text.indexOf('bye') > -1) {
+      utterance.text = "bye everyone. please come back later to meet me. bye.";
     }
     p = document.createElement("p");
   }
