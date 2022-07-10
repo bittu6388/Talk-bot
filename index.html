@@ -18,7 +18,9 @@
 
 
 
-<script>								
+<script>	
+const utterance = new SpeechSynthesisUtterance();
+															
 const texts = document.querySelector(".texts");
 
 window.SpeechRecognition =
@@ -39,10 +41,11 @@ recognition.addEventListener("result", (e) => {
   p.innerText = text;
   if (e.results[0].isFinal) {
     if (text.includes("how are you")) {
-      p = document.createElement("p");
-      p.classList.add("replay");
-      p.innerText = "I am fine";
-      texts.appendChild(p);
+      utterance.text = "I am fine what about you?";
+				utterance.pitch = 0.5;
+      utterance.rate = 1;
+				utterance.volume = 1;
+				utterance.lang = "hi-US";							window.speechSynthesis.speak(utterance);			
     }
     if (
       text.includes("what's your name") ||
