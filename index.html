@@ -27,9 +27,8 @@ utterance.rate = 1;
 utterance.volume = 1;
 utterance.pitch = 0.1;
 utterance.lang = "hi-IN";						
-function get(){			
-window.speechSynthesis.speak(utterance);
-}
+
+
 
 
 
@@ -51,24 +50,20 @@ recognition.addEventListener("result", (e) => {
   p.innerText = text;
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
-      utterance.text = "Hello everyone.";
-      nut.click();
+      utterance.text = "Hello everyone.";    
+window.speechSynthesis.speak(utterance);
     }
-    else if (
+    if (
       text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
-      nut.click();
+      window.speechSynthesis.speak(utterance);
     }
-   else if (text.indexOf('bye') > -1) {
+   if (text.indexOf('bye') > -1) {
       utterance.text = "bye everyone. please come back later. to meet me. bye.";
-      nut.click();
+      window.speechSynthesis.speak(utterance);
     }
-   else{
-   	utterance.text = "I can not recognize what tou have said";
-    nut.click();
-   }
     p = document.createElement("p");
   }
 });
