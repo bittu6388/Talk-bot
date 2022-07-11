@@ -8,8 +8,6 @@
 </head>
 <body>
  <section>
-    
-   <button onclick="get()" id="get">Click here</button>
    <div class="container">
      <div class="texts">
      </div>
@@ -23,10 +21,15 @@ const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
 const nut =document.getElementById("get");
+
+/*  
 utterance.rate = 1;
 utterance.volume = 1;
 utterance.pitch = 0.8;
-utterance.lang = "hi-IN";						
+utterance.lang = "hi-IN";
+utterance.text = "hii everyone.";    
+window.speechSynthesis.speak(utterance);
+*/
 
 
 
@@ -50,19 +53,16 @@ recognition.addEventListener("result", (e) => {
   p.innerText = text;
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
-      utterance.text = "hii everyone.";    
-window.speechSynthesis.speak(utterance);
+    responsiveVoice.speak("hii everyone" , "Hindi Male" ,{rate: 0.9});			
     }
     if (
       text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
-      utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
-      window.speechSynthesis.speak(utterance);
+      responsiveVoice.speak("My name is jarvis. my developer Ashutosh has given me this name." , "Hindi Male" ,{rate: 0.9});		
     }
    if (text.indexOf('bye') > -1) {
-      utterance.text = "bye everyone. please come back later. to meet me. bye.";
-      window.speechSynthesis.speak(utterance);
+      responsiveVoice.speak("bye everyone. please come back later to meet me. bye." , "Hindi Male" ,{rate: 0.9});		
     }
     p = document.createElement("p");
   }
@@ -74,5 +74,7 @@ recognition.addEventListener("end", () => {
 
 recognition.start();
 </script>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=cNyVrBfU"></script>
 </body>
 </html>
