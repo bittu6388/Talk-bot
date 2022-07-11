@@ -8,8 +8,7 @@
 </head>
 <body>
  <section>
-   <h1>Speech<br> Recognition</h1>
-   <p>Available In Chrome😎 Only</p>
+    
    <button onclick="get()" id="get">Click here</button>
    <div class="container">
      <div class="texts">
@@ -27,7 +26,7 @@ const nut =document.getElementById("get");
 utterance.rate = 1;
 utterance.volume = 1;
 utterance.pitch = 0.1;
-utterance.lang = "hi-US";						
+utterance.lang = "hi-IN";						
 function get(){			
 window.speechSynthesis.speak(utterance);
 }
@@ -55,17 +54,21 @@ recognition.addEventListener("result", (e) => {
       utterance.text = "Hello everyone.";
       nut.click();
     }
-    if (
+    else if (
       text.indexOf('is your name') > -1 ||
-      text.indexOf('w are you') > -1
+      text.indexOf('your name') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
       nut.click();
     }
-    if (text.indexOf('bye') > -1) {
+   else if (text.indexOf('bye') > -1) {
       utterance.text = "bye everyone. please come back later. to meet me. bye.";
       nut.click();
     }
+   else{
+   	utterance.text = "I can not recognize what tou have said";
+    nut.click();
+   }
     p = document.createElement("p");
   }
 });
