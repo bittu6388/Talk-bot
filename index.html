@@ -25,7 +25,7 @@ const texts = document.querySelector(".texts");
 const nut =document.getElementById("get");
 utterance.rate = 1;
 utterance.volume = 1;
-utterance.pitch = 0.1;
+utterance.pitch = 0.8;
 utterance.lang = "hi-IN";						
 
 
@@ -50,7 +50,7 @@ recognition.addEventListener("result", (e) => {
   p.innerText = text;
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
-      utterance.text = "Hello everyone.";    
+      utterance.text = "hii everyone.";    
 window.speechSynthesis.speak(utterance);
     }
     if (
