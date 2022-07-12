@@ -24,7 +24,7 @@ const texts = document.querySelector(".texts");
 const nut =document.getElementById("speak");
 utterance.rate = 1;
 utterance.volume = 1;
-utterance.pitch = 0.8;
+utterance.pitch = 0.4;
 utterance.lang = "hi-IN";						
 
 function get(){
@@ -51,11 +51,10 @@ recognition.addEventListener("result", (e) => {
   p.innerText = text;
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
-      utterance.text = "hii everyone.";    
+      utterance.text = "hi everyone.";    
       nut.click();
     }
-    if (
-      text.indexOf('is your name') > -1 ||
+    if (text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
