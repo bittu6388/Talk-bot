@@ -8,6 +8,7 @@
 </head>
 <body>
  <section>
+ 	 <button id="speak" onclick="get()">Speak</button>
    <div class="container">
      <div class="texts">
      </div>
@@ -20,13 +21,15 @@
 const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
-const nut =document.getElementById("get");
+const nut =document.getElementById("speak");
 utterance.rate = 1;
 utterance.volume = 1;
 utterance.pitch = 0.8;
 utterance.lang = "hi-IN";						
 
-
+function get(){
+window.speechSynthesis.speak(utterance);				
+}
 
 
 
@@ -49,18 +52,18 @@ recognition.addEventListener("result", (e) => {
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
       utterance.text = "hii everyone.";    
-window.speechSynthesis.speak(utterance);
+      nut.click();
     }
     if (
       text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
-      window.speechSynthesis.speak(utterance);
+      nut.click();
     }
    if (text.indexOf('bye') > -1) {
       utterance.text = "bye everyone. please come back later to meet me. bye.";
-      window.speechSynthesis.speak(utterance);
+      nut.click();
     }
     p = document.createElement("p");
   }
