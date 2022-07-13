@@ -59,6 +59,12 @@ recognition.addEventListener("result", (e) => {
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
       nut.click();
+    }    
+    if (text.indexOf('ashutosh') > -1 ||
+      text.indexOf('ashu') > -1
+    ) {
+      utterance.text = "He is my developer. He is expert making the robots like me.";
+      nut.click();
     }
    if (text.indexOf('bye') > -1) {
       utterance.text = "bye everyone. please come back later to meet me. bye.";
