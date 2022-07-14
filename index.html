@@ -22,9 +22,9 @@ const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
 const nut =document.getElementById("speak");
-utterance.rate = 1;
+utterance.rate = 0.8;
 utterance.volume = 1;
-utterance.pitch = 0.1;
+utterance.pitch = 0.4;
 utterance.lang = "hi-IN";						
 
 function get(){
@@ -52,42 +52,58 @@ recognition.addEventListener("result", (e) => {
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
       utterance.text = "hi everyone.";    
-      nut.click();
-    }
+      nut.click();}
+    
+  
+  
     if (text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
-      nut.click();
-    }    
+      nut.click();}    
+    
+    
+    
     if (text.indexOf('ashutosh') > -1 ||
       text.indexOf('ashu') > -1
     ) {
       utterance.text = "He is my developer. He is expert making the robots like me.";
-      nut.click();
-    }
+      nut.click();}
+    
+    
+    
     if (text.indexOf('made by') > -1) {
       utterance.text = "I am made bye Ashutosh and dhruv. They are my software and mechanical developers.";
-      nut.click();
-    }
-    if (text.indexOf('your developer') > -1) {
+      nut.click();}
+    
+    
+    
+    
+    if (text.indexOf('your developer') > -1 ||
+      text.indexOf('your developers') > -1
+    )  {
       utterance.text = "Ashutosh and dhruv. They are my software and mechanical developers.";
-      nut.click();
-    }
+      nut.click();}
+      
+      
+      
     if (text.indexOf('ratan') > -1) {
       utterance.text = "my developers has tell me about him. he is the principal of this school and a very best teacher";
-      nut.click();
-    }
+      nut.click();}
+      
+      
+      
      if (text.indexOf('who is the principal') > -1 ||
       text.indexOf('who is the principle') > -1
     ) {
       utterance.text = "Mister ratan singh mehra. He is the principal of this school and a very best teacher";
-      nut.click();
-    }
+      nut.click();}
+      
+      
+      
    if (text.indexOf('bye') > -1) {
       utterance.text = "bye everyone. please come back later to meet me. bye.";
-      nut.click();
-    }
+      nut.click();}
     p = document.createElement("p");
   }
 });
