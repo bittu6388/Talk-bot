@@ -1,18 +1,15 @@
-* {
+body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  font-family: "Montserrat";
-  font-size: 20px;
-}
+
 section {
-  min-height: 100vh;
+  margin-top: 5rem;
   width: 100%;
   display: flex;
   align-items: flex-start;
-  background-color: rgb(37, 37, 37);
+  background-color: red;  
   flex-direction: column;
   padding: 50px 0;
 }
@@ -28,6 +25,7 @@ section p {
   color: rgba(255, 255, 255, 0.322);
   width: 100%;
   margin-bottom: 40px;
+  opacity: 0;
 }
 .container {
   width: 90%;
@@ -43,7 +41,106 @@ section p {
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
+  opacity: 0;
 }
 .texts p.replay {
   text-align: right;
+  opacity: 0;
 }
+
+
+p{
+opacity: 0 !important;
+}
+
+button{
+position: absolute;
+}
+
+.eye{
+animation: wink 1s linear 1;
+animation-delay: 10s;
+border-bottom-left-radius: 100%;
+border-top-left-radius: 100%;
+}
+#eye-wink{
+width: 0px;
+height: 100vh;
+position: absolute;
+right: 0;
+background: #000;
+top: -10px;
+z-index: 99;
+}
+@keyframes wink {
+0%{
+width: 0px;
+}
+50%{
+width: 100vw;
+}	
+
+100%{
+width: 0px;
+}
+}
+
+#eye-main{
+width: 100vw;
+height: 100vh;
+display:flex;align-items:center;justify-content: space-around; 
+flex-direction: column;
+position: absolute;
+z-index: 9999999999;
+background: #000;
+}
+#eye-div{
+width: 70%;
+overflow: hidden;
+height: 40vh;
+background: #fff;
+border-radius: 100%;
+position: relative;
+}
+
+#eye-div-in{
+width: 60%;
+height: 60%;
+border-radius: 100%;
+position: absolute;
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+background: #000;
+color: #fff;
+display:flex;align-items:flex-end;justify-content: flex-end; 
+font-size: 11px;
+padding: 15px;
+box-shadow: inset 0px 0px 1px 40px #4e65cf;
+transition: all 0.5s;
+}
+
+#eye-div-in2{
+width: 60%;
+height: 60%;
+border-radius: 100%;
+position: absolute;
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+background: #000;
+color: #fff;
+display:flex;align-items:flex-end;justify-content: flex-end; 
+font-size: 11px;
+padding: 15px;
+box-shadow: inset 0px 0px 1px 40px #4e65cf;
+transition: all 0.5s;
+}
+
+/* 
+transform: translate(-50%,-50%);
+top:37%;
+
+transform: translate(-50%,50%);
+bottom:37%;
+ */

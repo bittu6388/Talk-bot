@@ -14,6 +14,22 @@
      </div>
    </div>
  </section>
+ 
+ 
+ 
+ 
+ 
+<div id="eye-main">		
+	   <div id="eye-div" onclick="lit()">
+	   		<div id="eye-wink" class="eye"></div>
+	   		<div id="eye-div-in"><h1>●</h1></div>
+	   </div>		
+	   	<div id="eye-div" onclick="rit()">
+	   		<div id="eye-wink" class="eye"></div>			
+	   		<div id="eye-div-in2"><h1>●</h1></div>
+	   </div>	
+</div>				
+
 
 
 
@@ -61,6 +77,14 @@ recognition.addEventListener("result", (e) => {
     ) {
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
       nut.click();}    
+      
+      
+      
+       if (text.indexOf('how are you') > -1 ||
+      text.indexOf('what's going on') > -1
+    ) {
+      utterance.text = "I am fine. Because of my developer Ashutosh.";
+      nut.click();}    
     
     
     
@@ -98,6 +122,28 @@ recognition.addEventListener("result", (e) => {
     ) {
       utterance.text = "Mister ratan singh mehra. He is the principal of this school and a very best teacher";
       nut.click();}
+      
+      
+      
+      if (text.indexOf('left') > -1 ||
+      text.indexOf('see left') > -1
+    ) {
+                  document.getElementById("eye-div-in").style.top ="37%";
+document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
+document.getElementById("eye-div-in2").style.top ="37%";
+document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
+
+
+
+
+  if (text.indexOf('right') > -1 ||
+      text.indexOf('write') > -1
+    ) {
+                  document.getElementById("eye-div-in").style.top ="62%";
+document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
+document.getElementById("eye-div-in2").style.top ="62%";
+document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
+
       
       
       
