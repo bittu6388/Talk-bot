@@ -1,6 +1,7 @@
 body{
   padding: 0;
   margin: 0;
+  font-family: Arial !important;
   box-sizing: border-box;
 }
 
@@ -58,8 +59,7 @@ position: absolute;
 }
 
 .eye{
-animation: wink 1s linear 1;
-animation-delay: 10s;
+animation: wink 7s linear infinite;
 border-bottom-left-radius: 100%;
 border-top-left-radius: 100%;
 }
@@ -76,11 +76,11 @@ z-index: 99;
 0%{
 width: 0px;
 }
-50%{
+8%{
 width: 100vw;
 }	
 
-100%{
+16%{
 width: 0px;
 }
 }

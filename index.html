@@ -20,11 +20,11 @@
  
  
 <div id="eye-main">		
-	   <div id="eye-div" onclick="lit()">
+	   <div id="eye-div">
 	   		<div id="eye-wink" class="eye"></div>
 	   		<div id="eye-div-in"><h1>●</h1></div>
 	   </div>		
-	   	<div id="eye-div" onclick="rit()">
+	   	<div id="eye-div">
 	   		<div id="eye-wink" class="eye"></div>			
 	   		<div id="eye-div-in2"><h1>●</h1></div>
 	   </div>	
@@ -143,6 +143,21 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="62%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
+
+
+
+
+if (text.indexOf('center') > -1 ||
+      text.indexOf('middle') > -1
+    ) {
+                  document.getElementById("eye-div-in").style.top ="50%";
+document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
+document.getElementById("eye-div-in2").style.top ="50%";
+document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
+
+
+
+
 
       
       
