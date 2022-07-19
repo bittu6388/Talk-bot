@@ -42,7 +42,6 @@ utterance.rate = 0.8;
 utterance.volume = 1;
 utterance.pitch = 0.4;
 utterance.lang = "hi-IN";						
-
 function get(){
 window.speechSynthesis.speak(utterance);				
 }
@@ -65,6 +64,8 @@ recognition.addEventListener("result", (e) => {
     .join("");
 
   p.innerText = text;
+  const pho = /^[0-9()+\-*.\/\s]*$/gm;
+  const phoneResult = pho.test(text);
   if (e.results[0].isFinal) {
     if (text.indexOf('ello') > -1) {
       utterance.text = "hi everyone.";    
@@ -157,6 +158,12 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 
 
+
+if(phoneResult == true){
+const evo =eval(text);
+utterance.text = evo;
+nut.click();
+}
 
 
       
