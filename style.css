@@ -26,7 +26,6 @@ section p {
   color: rgba(255, 255, 255, 0.322);
   width: 100%;
   margin-bottom: 40px;
-  opacity: 0;
 }
 .container {
   width: 90%;
@@ -42,17 +41,11 @@ section p {
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
-  opacity: 0;
 }
 .texts p.replay {
   text-align: right;
-  opacity: 0;
 }
 
-
-p{
-opacity: 0 !important;
-}
 
 button{
 position: absolute;
