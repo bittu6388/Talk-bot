@@ -156,12 +156,21 @@ document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="50%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
+if (text.indexOf('center') > -1) {
+               document.getElementById("eye-div-in").style.top ="50%";
+document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
+document.getElementById("eye-div-in2").style.top ="50%";
+document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
+
+
+
+
+
 
 
 
 if(phoneResult == true){
-const evo =eval(text);
-utterance.lang = "en-IN";				
+const evo =eval(text);	
 utterance.text = evo;
 nut.click();
 }
