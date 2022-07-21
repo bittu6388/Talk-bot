@@ -185,10 +185,9 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 
 if(phoneResult == true){
-text.replace("multiply" , "*");
-text.replace("multiply by" , "*");
-text.replace("into" , "*");
-const evo =eval(text);	
+const newtext = text.replace("multiply by", "*");
+const evo =eval(newtext);	
+
 utterance.text = evo;
 nut.click();
 }
