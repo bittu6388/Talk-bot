@@ -3,6 +3,7 @@ body{
   margin: 0;
   font-family: Arial !important;
   box-sizing: border-box;
+  user-select: none;
 }
 
 section {
@@ -90,7 +91,7 @@ background: #000;
 #eye-div{
 width: 70%;
 overflow: hidden;
-height: 40vh;
+height: 38vh;
 background: #fff;
 border-radius: 100%;
 position: relative;
@@ -110,7 +111,7 @@ display:flex;align-items:flex-end;justify-content: flex-end;
 font-size: 11px;
 padding: 15px;
 box-shadow: inset 0px 0px 1px 40px #4e65cf;
-transition: all 0.2s;
+transition: all 0.3s;
 }
 
 #eye-div-in2{
@@ -127,7 +128,7 @@ display:flex;align-items:flex-end;justify-content: flex-end;
 font-size: 11px;
 padding: 15px;
 box-shadow: inset 0px 0px 1px 40px #4e65cf;
-transition: all 0.2s;
+transition: all 0.3s;
 }
 
 /* 

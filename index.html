@@ -41,7 +41,7 @@ const nut =document.getElementById("speak");
 utterance.rate = 0.8;
 utterance.volume = 1;
 utterance.pitch = 0.4;
-utterance.lang = "hi-IN";						
+utterance.lang = "en-IN";						
 function get(){
 window.speechSynthesis.speak(utterance);				
 }
@@ -94,10 +94,17 @@ recognition.addEventListener("result", (e) => {
     ) {
       utterance.text = "He is my developer. He is expert making the robots like me.";
       nut.click();}
+      
+      if (text.indexOf('dhruv') > -1 ||
+      text.indexOf('dhru') > -1
+    ) {
+      utterance.text = "He is my developer. He is very good in study.";
+      nut.click();}
+      
     
     
     
-    if (text.indexOf('made by') > -1) {
+    if (text.indexOf('made') > -1) {
       utterance.text = "I am made bye Ashutosh and dhruv. They are my software and mechanical developers.";
       nut.click();}
     
@@ -118,13 +125,21 @@ recognition.addEventListener("result", (e) => {
       
       
       
-     if (text.indexOf('who is the principal') > -1 ||
-      text.indexOf('who is the principle') > -1
+     if (text.indexOf('principal') > -1 ||
+      text.indexOf('principle') > -1
     ) {
       utterance.text = "Mister ratan singh mehra. He is the principal of this school and a very best teacher";
       nut.click();}
       
       
+      if (text.indexOf('director') > -1 ||
+      text.indexOf('manager') > -1
+    ) {
+      utterance.text = "Mister jagat singh chaudhary. He is the managing director of this school and a very good person";
+      nut.click();}
+      
+      
+            
       
       if (text.indexOf('left') > -1 ||
       text.indexOf('see left') > -1
@@ -180,7 +195,7 @@ nut.click();
       
       
    if (text.indexOf('bye') > -1) {
-      utterance.text = "bye everyone. please come back later to meet me. bye.";
+      utterance.text = "bye everyone. please come back later to meet me. bye!";
       nut.click();}
     p = document.createElement("p");
   }
