@@ -7,8 +7,9 @@
 				<title>Page title</title>
 </head>
 <body>
+	<div id="time"></div>
  <section>
- 	 <button id="speak" onclick="get()">Speak</button>
+ 	 <button id="speak" onclick="get()">Speak</button> 
    <div class="container">
      <div class="texts">
      </div>
@@ -34,6 +35,35 @@
 
 
 <script>	
+const time = document.querySelector("#time");
+setInterval(()=>{
+let date = new Date(); 
+let hours = date.getHours(); 
+let minutes = date.getMinutes(); 
+let seconds = date.getSeconds(); 
+let day_night = "AM"; 
+
+if(hours > 12){ 
+day_night = "PM"; hours = hours - 12; 
+} 
+if(seconds < 10){
+seconds = "0" + seconds; 
+} 
+if(minutes < 10){ 
+minutes = "0" + minutes; 
+} 
+if(hours < 10){ 
+hours = "0" + hours; 
+} 
+time.textContent = hours + ":" + minutes + "," +
+day_night; 
+}); 
+
+
+
+
+
+
 const utterance = new SpeechSynthesisUtterance();
 															
 const texts = document.querySelector(".texts");
@@ -179,12 +209,14 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 
 
+if (text.indexOf('time') > -1)  {
+      utterance.text = time.textContent;
+      nut.click();}
 
 
 
 
 if(phoneResult == true){
-const text = text.replace("×", "*");
 const evo =eval(text);	
 utterance.text = evo;
 nut.click();
