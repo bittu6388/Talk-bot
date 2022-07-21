@@ -40,7 +40,7 @@ const texts = document.querySelector(".texts");
 const nut =document.getElementById("speak");
 utterance.rate = 0.8;
 utterance.volume = 1;
-utterance.pitch = 0.4;
+utterance.pitch = 0.6;
 utterance.lang = "en-IN";						
 function get(){
 window.speechSynthesis.speak(utterance);				
@@ -179,15 +179,19 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 
 
+if (text.indexOf('repeat') > -1 ||
+      text.indexOf('once more') > -1
+    ) {nut.click();}
+
+
 
 
 
 
 
 if(phoneResult == true){
-const newtext = text.replace("×", "*");
-const evo =eval(newtext);	
-
+const text = text.replace("×", "*");
+const evo =eval(text);	
 utterance.text = evo;
 nut.click();
 }
