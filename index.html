@@ -20,7 +20,7 @@
  
  
  
-<div id="eye-main">		
+<div id="eye-main" onclick="document.body.style.touchAction='none'">		
 	   <div id="eye-div">
 	   		<div id="eye-wink" class="eye"></div>
 	   		<div id="eye-div-in"><h1>●</h1></div>
@@ -111,6 +111,31 @@ recognition.addEventListener("result", (e) => {
       
       
       
+      if (text.indexOf('about you') > -1 ||
+      text.indexOf('yourself') > -1
+    ) {
+      utterance.text = "Hello,My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
+      nut.click();}    
+      
+      
+      
+      if (text.indexOf('who are you') > -1 ||
+      text.indexOf('what are you') > -1
+    ) {
+      utterance.text = "Hello,My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
+      nut.click();}   
+      
+      
+      
+      if (text.indexOf('you do') > -1 ||
+      text.indexOf('what can you do') > -1
+    ) {
+      utterance.text = "I can talk with you like a friend. I can tell you time,date,weather etcetera.";
+      nut.click();}     
+      
+            
+               
+          
        if (text.indexOf('how are you') > -1 ||
       text.indexOf('are you fine') > -1
     ) {
@@ -119,14 +144,14 @@ recognition.addEventListener("result", (e) => {
     
     
     
-    if (text.indexOf('ashutosh') > -1 ||
-      text.indexOf('ashu') > -1
+    if (text.indexOf('Ashutosh') > -1 ||
+      text.indexOf('ashutosh') > -1
     ) {
       utterance.text = "He is my developer. He is expert making the robots like me.";
       nut.click();}
       
       if (text.indexOf('dhruv') > -1 ||
-      text.indexOf('dhru') > -1
+      text.indexOf('Dhru') > -1
     ) {
       utterance.text = "He is my developer. He is very good in study.";
       nut.click();}
@@ -167,7 +192,6 @@ recognition.addEventListener("result", (e) => {
     ) {
       utterance.text = "Mister jagat singh chaudhary. He is the managing director of this school and a very good person";
       nut.click();}
-      
       
             
       
