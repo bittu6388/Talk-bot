@@ -97,7 +97,9 @@ recognition.addEventListener("result", (e) => {
   const pho = /^[0-9()+\-*.\/\s]*$/gm;
   const phoneResult = pho.test(text);
   if (e.results[0].isFinal) {
-    if (text.indexOf('ello') > -1) {
+   if (text.indexOf('hello') > -1 ||
+      text.indexOf('Hello') > -1
+    ) {
       utterance.text = "hi everyone.";    
       nut.click();}
     
@@ -114,7 +116,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('about you') > -1 ||
       text.indexOf('yourself') > -1
     ) {
-      utterance.text = "Hello,My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
+      utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
       nut.click();}    
       
       
@@ -122,7 +124,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('who are you') > -1 ||
       text.indexOf('what are you') > -1
     ) {
-      utterance.text = "Hello,My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
+      utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
       nut.click();}   
       
       
@@ -235,6 +237,11 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 if (text.indexOf('time') > -1)  {
       utterance.text = time.textContent;
+      nut.click();}
+     
+if (text.indexOf('repeat') > -1 ||
+      text.indexOf('Repeat') > -1
+    ) {
       nut.click();}
 
 
