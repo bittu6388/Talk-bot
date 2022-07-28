@@ -39,8 +39,6 @@
 
 
 <script>	
-document.getElementById("eye-div-in").classList.add("eye-div-in");
-document.getElementById("eye-div-in2").classList.add("eye-div-in");				
 const time = document.querySelector("#time");
 setInterval(()=>{
 let date = new Date(); 
@@ -66,6 +64,10 @@ day_night;
 }); 
 
 
+const din = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+const saal = new Date(year);
+document.getElementById("date").innerText = saal;
 
 
 
@@ -207,9 +209,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('left') > -1 ||
       text.indexOf('see left') > -1
     ) {
-
-document.getElementById("eye-div-in").classList.remove("eye-div-in");
-document.getElementById("eye-div-in2").classList.remove("eye-div-in");                  document.getElementById("eye-div-in").style.top ="37%";
+                  document.getElementById("eye-div-in").style.top ="37%";
 document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="37%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
@@ -220,8 +220,7 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
   if (text.indexOf('right') > -1 ||
       text.indexOf('write') > -1
     ) {
-document.getElementById("eye-div-in").classList.remove("eye-div-in");
-document.getElementById("eye-div-in2").classList.remove("eye-div-in");                         document.getElementById("eye-div-in").style.top ="62%";
+                  document.getElementById("eye-div-in").style.top ="62%";
 document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="62%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
@@ -232,15 +231,13 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 if (text.indexOf('centre') > -1 ||
       text.indexOf('middle') > -1
     ) {
-document.getElementById("eye-div-in").classList.add("eye-div-in");
-document.getElementById("eye-div-in2").classList.add("eye-div-in");                  document.getElementById("eye-div-in").style.top ="50%";
+                  document.getElementById("eye-div-in").style.top ="50%";
 document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="50%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 if (text.indexOf('center') > -1) {
-document.getElementById("eye-div-in").classList.add("eye-div-in");
-document.getElementById("eye-div-in2").classList.add("eye-div-in");               document.getElementById("eye-div-in").style.top ="50%";
+               document.getElementById("eye-div-in").style.top ="50%";
 document.getElementById("eye-div-in").style.transform ="translate(-50%,-50%)";
 document.getElementById("eye-div-in2").style.top ="50%";
 document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
