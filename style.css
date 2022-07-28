@@ -114,6 +114,34 @@ box-shadow: inset 0px 0px 1px 40px #4e65cf;
 transition: all 0.3s;
 }
 
+
+.eye-div-in{
+animation:move 4s ease-in-out infinite;
+}
+@keyframes move{
+20%{
+transform: translate(-50%,-50%);
+left: 50%;
+top: 40%;	
+}
+35%{
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+}
+
+60%{
+transform: translate(-50%,-50%);
+left: 50%;
+top: 60%;
+}
+75%{
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+}
+}
+
 #eye-div-in2{
 width: 60%;
 height: 60%;
