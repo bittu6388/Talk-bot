@@ -8,10 +8,9 @@
 </head>
 <body>
 	<div id="time"></div>
-	<div id="date"></div>
-	<div id="day"></div>
-	<div id="month"></div>
-	<div id="year"></div>
+	<div id="taareek"></div>
+	<div id="mahina"></div>
+	<div id="saal"></div>
  <section>
  	 <button id="speak" onclick="get()">Speak</button> 
    <div class="container">
@@ -47,6 +46,14 @@ let minutes = date.getMinutes();
 let seconds = date.getSeconds(); 
 let day_night = "AM"; 
 
+var dd = String(date.getDate()).padStart(2, '0'); 
+var mm = String(date.getMonth() + 1).padStart(2, '0'); 
+var yyyy = date.getFullYear();
+taareek = dd; 
+mahina = mm;
+saal = yyyy;
+
+
 if(hours > 12){ 
 day_night = "PM"; hours = hours - 12; 
 } 
@@ -59,9 +66,15 @@ minutes = "0" + minutes;
 if(hours < 10){ 
 hours = "0" + hours; 
 } 
-time.textContent = hours + ":" + minutes + "," +
+time.textContent = hours + ":" + minutes +
 day_night; 
+
+
+document.getElementById("taareek").innerText =taareek;
+document.getElementById("mahina").innerText =mahina;
+document.getElementById("saal").innerText =saal;
 }); 
+
 
 
 
@@ -73,7 +86,7 @@ const texts = document.querySelector(".texts");
 const nut =document.getElementById("speak");
 utterance.rate = 0.9;
 utterance.volume = 1;
-utterance.pitch = 0.5;
+utterance.pitch = 0.7;
 utterance.lang = "en-IN";						
 function get(){
 window.speechSynthesis.speak(utterance);				
@@ -241,6 +254,29 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 if (text.indexOf('time') > -1)  {
       utterance.text = time.textContent;
       nut.click();}
+
+
+if (text.indexOf('date') > -1 ||
+      text.indexOf('Date') > -1
+    ) {
+      utterance.text = document.getElementById("taareek").innerText;
+      nut.click();}
+      
+      
+if (text.indexOf('month') > -1 ||
+      text.indexOf('Month') > -1
+    ) {
+      utterance.text = document.getElementById("mahina").innerText;
+      nut.click();}
+      
+      
+if (text.indexOf('year') > -1 ||
+      text.indexOf('Year') > -1
+    ) {
+      utterance.text = document.getElementById("saal").innerText;
+      nut.click();}
+      
+     
      
 if (text.indexOf('repeat') > -1 ||
       text.indexOf('Repeat') > -1
