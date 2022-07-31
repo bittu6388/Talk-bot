@@ -7,6 +7,9 @@
 				<title>Page title</title>
 </head>
 <body>
+	<audio id="audio">
+			<source src="Brown Munde - AP Dhillon.mp3">
+	</audio>
 	<div id="time"></div>
 	<div id="taareek"></div>
 	<div id="mahina"></div>
@@ -70,8 +73,8 @@ time.textContent = hours + ":" + minutes +
 day_night; 
 
 
-document.getElementById("taareek").innerText =taareek;
-document.getElementById("mahina").innerText =mahina;
+document.getElementById("taareek").innerText =taareek.replace("0", " ");
+document.getElementById("mahina").innerText =mahina.replace("0", " ");
 document.getElementById("saal").innerText =saal;
 }); 
 
@@ -87,7 +90,7 @@ const nut =document.getElementById("speak");
 utterance.rate = 0.9;
 utterance.volume = 1;
 utterance.pitch = 0.7;
-utterance.lang = "en-IN";						
+	
 function get(){
 window.speechSynthesis.speak(utterance);				
 }
@@ -116,6 +119,7 @@ recognition.addEventListener("result", (e) => {
    if (text.indexOf('hello') > -1 ||
       text.indexOf('Hello') > -1
     ) {
+      utterance.lang = "en-IN";					
       utterance.text = "hi everyone.";    
       nut.click();}
     
@@ -124,6 +128,7 @@ recognition.addEventListener("result", (e) => {
     if (text.indexOf('is your name') > -1 ||
       text.indexOf('your name') > -1
     ) {
+      utterance.lang = "en-IN";					
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.";
       nut.click();}    
       
@@ -132,6 +137,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('about you') > -1 ||
       text.indexOf('yourself') > -1
     ) {
+      utterance.lang = "en-IN";					
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
       nut.click();}    
       
@@ -140,6 +146,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('who are you') > -1 ||
       text.indexOf('what are you') > -1
     ) {
+      utterance.lang = "en-IN";					
       utterance.text = "My name is jarvis. my developer Ashutosh has given me this name.I am a robot,i can walk and talk. You can ask me to tell you time,whether,date etcetera.";
       nut.click();}   
       
@@ -148,6 +155,7 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('you do') > -1 ||
       text.indexOf('what can you do') > -1
     ) {
+      utterance.lang = "en-IN";					
       utterance.text = "I can talk with you like a friend. I can tell you time,date,weather etcetera.";
       nut.click();}     
       
@@ -157,6 +165,7 @@ recognition.addEventListener("result", (e) => {
        if (text.indexOf('how are you') > -1 ||
       text.indexOf('are you fine') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = "I am fine. Because of my developer Ashutosh.";
       nut.click();}    
     
@@ -165,12 +174,14 @@ recognition.addEventListener("result", (e) => {
     if (text.indexOf('Ashutosh') > -1 ||
       text.indexOf('ashutosh') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = "He is my developer. He is expert making the robots like me.";
       nut.click();}
       
       if (text.indexOf('dhruv') > -1 ||
       text.indexOf('Dhru') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = "He is my developer. He is very good in study.";
       nut.click();}
       
@@ -178,6 +189,7 @@ recognition.addEventListener("result", (e) => {
     
     
     if (text.indexOf('made') > -1) {
+      utterance.lang = "en-IN";
       utterance.text = "I am made bye Ashutosh and dhruv. They are my software and mechanical developers.";
       nut.click();}
     
@@ -187,12 +199,14 @@ recognition.addEventListener("result", (e) => {
     if (text.indexOf('your developer') > -1 ||
       text.indexOf('your developers') > -1
     )  {
+      utterance.lang = "en-IN";
       utterance.text = "Ashutosh and dhruv. They are my software and mechanical developers.";
       nut.click();}
       
       
       
     if (text.indexOf('ratan') > -1) {
+      utterance.lang = "en-IN";
       utterance.text = "my developers has tell me about him. he is the principal of this school and a very best teacher";
       nut.click();}
       
@@ -201,6 +215,7 @@ recognition.addEventListener("result", (e) => {
      if (text.indexOf('principal') > -1 ||
       text.indexOf('principle') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = "Mister ratan singh mehra. He is the principal of this school and a very best teacher";
       nut.click();}
       
@@ -208,8 +223,38 @@ recognition.addEventListener("result", (e) => {
       if (text.indexOf('director') > -1 ||
       text.indexOf('manager') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = "Mister jagat singh chaudhary. He is the managing director of this school and a very good person";
       nut.click();}
+      
+      
+      if (text.indexOf('namaste') > -1 ||
+      text.indexOf('Namaste') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = "नमस्ते मेरा नाम जारविस है| मैं एक बोलने और चलने वाला रोबोट हूँ";
+      nut.click();
+     document.getElementById("audio").play();
+      }
+      
+      
+      if (text.indexOf('play music') > -1 ||
+      text.indexOf('Play music') > -1
+    ) {
+      utterance.lang = "en-IN";
+      utterance.text = "Ok.Playing music";
+      nut.click();
+     document.getElementById("audio").play();
+      }
+      
+      if (text.indexOf('pause music') > -1 ||
+      text.indexOf('stop music') > -1
+    ) {
+      utterance.lang = "en-IN";
+      utterance.text = "Ok.Playing music";
+      nut.click();
+     document.getElementById("audio").pause();
+      }
       
             
       
@@ -252,6 +297,7 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 
 if (text.indexOf('time') > -1)  {
+      utterance.lang = "en-IN";
       utterance.text = time.textContent;
       nut.click();}
 
@@ -259,6 +305,7 @@ if (text.indexOf('time') > -1)  {
 if (text.indexOf('date') > -1 ||
       text.indexOf('Date') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = document.getElementById("taareek").innerText;
       nut.click();}
       
@@ -266,6 +313,7 @@ if (text.indexOf('date') > -1 ||
 if (text.indexOf('month') > -1 ||
       text.indexOf('Month') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = document.getElementById("mahina").innerText;
       nut.click();}
       
@@ -273,7 +321,22 @@ if (text.indexOf('month') > -1 ||
 if (text.indexOf('year') > -1 ||
       text.indexOf('Year') > -1
     ) {
+      utterance.lang = "en-IN";
       utterance.text = document.getElementById("saal").innerText;
+      nut.click();}
+      
+if (text.indexOf('weather') > -1 ||
+      text.indexOf('Weather') > -1
+    ) {
+      utterance.lang = "en-IN";
+      utterance.text = "26 degree Celsius";
+      nut.click();}
+      
+if (text.indexOf('whether') > -1 ||
+      text.indexOf('Whether') > -1
+    ) {
+      utterance.lang = "en-IN";
+      utterance.text = "26 degree Celsius";
       nut.click();}
       
      
@@ -288,6 +351,7 @@ if (text.indexOf('repeat') > -1 ||
 
 if(phoneResult == true){
 const evo =eval(text);	
+utterance.lang = "en-IN";
 utterance.text = evo;
 nut.click();
 }
@@ -297,7 +361,8 @@ nut.click();
       
       
    if (text.indexOf('bye') > -1) {
-      utterance.text = "bye everyone. please come back later to meet me. bye!";
+      utterance.lang = "en-IN";
+      utterance.text = "ok. please come back later to meet me.";
       nut.click();}
     p = document.createElement("p");
   }
