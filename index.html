@@ -7,7 +7,7 @@
 				<title>Page title</title>
 </head>
 <body>
-	<audio id="audio">
+	<audio id="audio" autoplay="false">
 			<source src="Brown Munde - AP Dhillon.mp3">
 	</audio>
 	<div id="time"></div>
@@ -232,10 +232,45 @@ recognition.addEventListener("result", (e) => {
       text.indexOf('Namaste') > -1
     ) {
       utterance.lang = "hi-IN";
-      utterance.text = "नमस्ते मेरा नाम जारविस है| मैं एक बोलने और चलने वाला रोबोट हूँ";
-      nut.click();
-     document.getElementById("audio").play();
-      }
+      utterance.text = "नमस्ते, मेरा नाम जारविस है| मैं एक बोलने और चलने वाला रोबोट हूँ";
+      nut.click();}
+      
+      if (text.indexOf('naam') > -1 ||
+      text.indexOf('Naam') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = "नमस्ते, मेरा नाम जारविस है| मुझे मेरे डेवलपर्स आशुतोष और ध्रुव ने बनाया है|";
+      nut.click();}
+      
+      if (text.indexOf('kya kar') > -1 ||
+      text.indexOf('Kya kar') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = "मैं एक बोलने और चलने वाला रोबोट हूँ| मैं आपसे आपके दोस्त की तरह बात करता हूँ| उसके अलावा मैं आपको सामय, तारीख, मौसम आदि बता सकता हूँ|";
+      nut.click();}
+      
+      
+      if (text.indexOf('samay') > -1 ||
+      text.indexOf('Samay') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = time.textContent;
+      nut.click();}
+      
+      if (text.indexOf('taareek') > -1 ||
+      text.indexOf('dinaank') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = document.getElementById("taareek").innerText;
+      nut.click();}
+      
+      if (text.indexOf('mahina') > -1 ||
+      text.indexOf('Mahina') > -1
+    ) {
+      utterance.lang = "hi-IN";
+      utterance.text = document.getElementById("mahina").innerText;
+      nut.click();}
+      
       
       
       if (text.indexOf('play music') > -1 ||
@@ -298,7 +333,7 @@ document.getElementById("eye-div-in2").style.transform ="translate(-50%,-50%)";}
 
 if (text.indexOf('time') > -1)  {
       utterance.lang = "en-IN";
-      utterance.text = time.textContent;
+      utterance.text ="The time is" + time.textContent;
       nut.click();}
 
 
@@ -306,7 +341,7 @@ if (text.indexOf('date') > -1 ||
       text.indexOf('Date') > -1
     ) {
       utterance.lang = "en-IN";
-      utterance.text = document.getElementById("taareek").innerText;
+      utterance.text ="Today date is" + document.getElementById("taareek").innerText;
       nut.click();}
       
       
@@ -314,7 +349,7 @@ if (text.indexOf('month') > -1 ||
       text.indexOf('Month') > -1
     ) {
       utterance.lang = "en-IN";
-      utterance.text = document.getElementById("mahina").innerText;
+      utterance.text ="Now month is" + document.getElementById("mahina").innerText;
       nut.click();}
       
       
@@ -322,7 +357,7 @@ if (text.indexOf('year') > -1 ||
       text.indexOf('Year') > -1
     ) {
       utterance.lang = "en-IN";
-      utterance.text = document.getElementById("saal").innerText;
+      utterance.text ="This year is" + document.getElementById("saal").innerText;
       nut.click();}
       
 if (text.indexOf('weather') > -1 ||
