@@ -54,16 +54,16 @@ position: absolute;
 
 .eye{
 animation: wink 7s linear infinite;
-border-bottom-left-radius: 100%;
-border-top-left-radius: 100%;
+border-bottom-right-radius: 100%;
+border-top-right-radius: 100%;
 }
 #eye-wink{
 width: 0px;
 height: 100vh;
 position: absolute;
-right: 0;
+left: 0;
 background: #000;
-top: -10px;
+bottom: -10px;
 z-index: 99;
 }
 @keyframes wink {
@@ -107,7 +107,7 @@ left: 50%;
 top: 50%;
 background: #000;
 color: #fff;
-display:flex;align-items:flex-end;justify-content: flex-end; 
+display:flex;align-items:flex-end;justify-content: flex-start; 
 font-size: 11px;
 padding: 15px;
 box-shadow: inset 0px 0px 1px 40px #4e65cf;
@@ -152,7 +152,7 @@ left: 50%;
 top: 50%;
 background: #000;
 color: #fff;
-display:flex;align-items:flex-end;justify-content: flex-end; 
+display:flex;align-items:flex-end;justify-content: flex-start; 
 font-size: 11px;
 padding: 15px;
 box-shadow: inset 0px 0px 1px 40px #4e65cf;

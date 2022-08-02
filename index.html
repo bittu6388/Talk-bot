@@ -89,7 +89,8 @@ const texts = document.querySelector(".texts");
 const nut =document.getElementById("speak");
 utterance.rate = 0.9;
 utterance.volume = 1;
-utterance.pitch = 0.7;
+utterance.pitch = 0.5;
+utterance.lang = "en-IN";		
 	
 function get(){
 window.speechSynthesis.speak(utterance);				
